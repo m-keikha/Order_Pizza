@@ -2,18 +2,15 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 
-// با وریینتس میتوانیم از یک موشین چند بار استفاده کنیم و کدهایمان را خوانا کنیم
-// اول از همه می بایست در یک کتابخانه مانند زیر کد های موشن را ذخیره کنیم
 
 const containerVariants = {
-    hidden: { // برای انیمیت و اینشیالز خودمان یک اسم ب دلخواه می گذاریم و بعدا مشخص می کنیم منظورمان اینیشالز است
+    hidden: { 
         opacity: 0,
-        x: '100vw' // المنت ما خارج از پیج قرار می گیرد
+        x: '100vw'
     },
     visible: {
         opacity: 1,
         x: 0,
-        // ترنسیشن را در قسمت انیمیت بدین صورت می گذاریم
         transition: {
             type: 'spring',
             delay: 0.5
@@ -42,7 +39,7 @@ export default function Base({ addBase, pizza }) {
     return (
         <motion.div className="base container"
             variants={containerVariants}
-            initial='hidden' // گفتیم پراپرتی هیددن که اول کدها تعیین کردیم همان اینشیالز ما است
+            initial='hidden'
             animate='visible'
 
         >
@@ -64,12 +61,7 @@ export default function Base({ addBase, pizza }) {
 
             {pizza.base && (
                 <motion.div className="next"
-                    variants={nextVariants} // اگر اسم اینشیالز و انیمیت مانند عنصر والد
-                    //ما همان هیددن و ویزیبل باشد بصورت خودکار اینشیالز و انیمیت را اجرا
-                    // میکند و نیازی نیست ما اینجا بصورت دستی ان را بنویسیم 
-
-                    // initial='hidden' 
-                    // animate='visible'
+                    variants={nextVariants}
                 >
                     <Link to="/">
                         <motion.button
