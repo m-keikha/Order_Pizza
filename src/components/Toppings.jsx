@@ -2,14 +2,13 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const containerVariants = {
-    hidden: { // برای انیمیت و اینشیالز خودمان یک اسم ب دلخواه می گذاریم و بعدا مشخص می کنیم منظورمان اینیشالز است
+    hidden: { 
         opacity: 0,
-        x: '100vw' // المنت ما خارج از پیج قرار می گیرد
+        x: '100vw' 
     },
     visible: {
         opacity: 1,
         x: 0,
-        // ترنسیشن را در قسمت انیمیت بدین صورت می گذاریم
         transition: {
             type: 'spring',
             delay: 0.5
